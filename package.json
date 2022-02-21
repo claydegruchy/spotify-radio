@@ -1,0 +1,24 @@
+{
+  "name": "spotify-radio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claydegruchy/spotify-radio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claydegruchy/spotify-radio/issues"
+  },
+  "homepage": "https://github.com/claydegruchy/spotify-radio#readme",
+  "devDependencies": {
+    "electron": "^17.0.1"
+  }
+}
