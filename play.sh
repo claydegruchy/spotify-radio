@@ -1,6 +1,4 @@
 
-
-
 if [ "$EUID" -ne 0 ]
   then echo "This script requires root access to read /opt/music/spotify. Please run as root."
   exit
@@ -17,6 +15,3 @@ wait
 pkill  "sox"
 pkill  "play"
 
-
-
- 
