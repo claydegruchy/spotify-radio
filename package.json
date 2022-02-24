@@ -20,5 +20,9 @@
   "homepage": "https://github.com/claydegruchy/spotify-radio#readme",
   "devDependencies": {
     "electron": "^17.0.1"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "ip": "^1.1.5"
   }
 }

@@ -4,6 +4,45 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
+const ip = require('ip');
+const ipAddress = ip.address();
+const express = require('express');
+const exp = express();
+const port = 3000;
+
+exp.get('/', (req, res) => {
+  win.webContents.send('asynchronous-message', {'SAVED': 'File Saved'});
+  res.send('Hello World!');
+});
+
+exp.use((req, res, next) => {
+  console.log(
+    'info',
+    `[${req.method}] - ` +
+      req.protocol +
+      '://' +
+      req.get('host') +
+      req.originalUrl
+  );
+  next();
+});
+
+exp.use((err, req, res, next) => {
+  var unqiueErrorCode = Math.random().toString(36).substring(7);
+  console.error({
+    context: 'generic error',
+    input: req.code,
+    error: err,
+    code: unqiueErrorCode,
+  });
+  return res.status(500)
+});
+
+exp.listen(port, () => {
+  console.log(`Example exp listening on port ${port}`);
+  console.log(`Network access via: ${ipAddress}:${port}!`);
+});
+
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
